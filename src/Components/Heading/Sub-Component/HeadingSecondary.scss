@@ -1,0 +1,31 @@
+@import "./../../../Styles/variables";
+@import "./../../../Styles/mixins";
+
+.heading-secondary {
+  @include flexLayout(flex-start, flex-start, row, 2rem);
+  width: 100%;
+  padding: 1rem 0;
+
+  &__text {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color: $color-primary;
+
+    @media only screen and(max-width: 50em) {
+      font-size: 1.6rem;
+    }
+
+    @media only screen and(max-width: 26em) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__line-effect {
+    border-bottom: 0;
+    width: 10rem;
+    align-self: center;
+    border-top: 1px solid $color-primary-extra-dark;
+  }
+}

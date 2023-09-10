@@ -1,0 +1,61 @@
+@import "./../../Styles/variables";
+@import "./../../Styles/mixins";
+
+.section-why {
+  @include flexLayout(flex-start, flex-start, column, 5rem);
+  padding: 4rem 0;
+  position: relative;
+  &--row1 {
+    @include flexLayout(flex-start, flex-start, row, 5rem);
+    & img {
+      box-shadow: $box-shadow;
+      width: 40%;
+      transition: all 0.2s;
+      &:hover {
+        @include zoomEffectAnimation;
+        z-index: 11;
+      }
+
+      @media only screen and(max-width: 43em) {
+        flex: 1;
+        align-self: center;
+        order: 2;
+        width: 100%;
+      }
+    }
+    @media only screen and(max-width: 75em) {
+      gap: 3rem;
+    }
+    @media only screen and(max-width: 43em) {
+      flex-direction: column;
+    }
+    &__heading {
+      @include flexLayout(center, flex-start, column, 5rem);
+      @media only screen and(max-width: 75em) {
+        gap: 3rem;
+      }
+    }
+  }
+  &--row2 {
+    @include flexLayout(flex-start, flex-start, row, 4rem);
+    margin-top: -10rem;
+    padding-left: 10rem;
+
+    @media only screen and(max-width: 75em) {
+      margin: 0;
+      padding-left: 0;
+      gap: 3rem;
+    }
+
+    @media only screen and(max-width: 26em) {
+      flex-direction: column;
+    }
+  }
+
+  @media only screen and(max-width: 75em) {
+    row-gap: 3rem;
+  }
+  @media only screen and(max-width: 50em) {
+    padding: 2rem 0;
+  }
+}

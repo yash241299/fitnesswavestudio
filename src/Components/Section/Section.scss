@@ -1,0 +1,13 @@
+@import "./../../Styles/variables";
+.section {
+  padding: 5rem 0;
+  @media only screen and(max-width: 75em) {
+    padding: 3rem 0;
+  }
+  @media only screen and(max-width: 62.5em) {
+    padding: 1rem 0;
+  }
+}
+.primary {
+  background-color: $color-primary-extra-light-3;
+}

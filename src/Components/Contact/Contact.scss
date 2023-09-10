@@ -1,0 +1,45 @@
+@import "./../../Styles/variables";
+@import "./../../Styles/mixins";
+
+.contact {
+  @include flexLayout(flex-start, center, row, 2rem);
+  margin: 4rem 0;
+  background-color: $color-white;
+  box-shadow: $box-shadow;
+
+  &-logo {
+    flex-basis: 40%;
+    & .img {
+      width: 100%;
+      margin-bottom: -0.5rem;
+      @media only screen and(max-width: 43em) {
+        width: 50%;
+      }
+    }
+    @media only screen and(max-width: 43em) {
+      display: none;
+    }
+  }
+
+  &-main {
+    padding: 4rem;
+    flex: 1;
+    @media only screen and(max-width: 62.5em) {
+      padding: 2rem;
+    }
+    @media only screen and(max-width: 26em) {
+      padding: 2rem 0;
+    }
+  }
+  @media only screen and(max-width: 62.5em) {
+    column-gap: 0rem;
+  }
+
+  @media only screen and(max-width: 50em) {
+    margin: 2rem 0;
+  }
+
+  @media only screen and(max-width: 43em) {
+    flex-direction: column;
+  }
+}

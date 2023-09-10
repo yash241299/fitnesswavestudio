@@ -1,0 +1,68 @@
+@mixin flexLayout(
+  $justify: center,
+  $align: center,
+  $direction: row,
+  $gap: 5rem
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin generalTextFormatting($fontWeight: 400, $font-size: 1.4rem) {
+  font-size: $font-size;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: $fontWeight;
+  text-decoration: none;
+}
+
+@mixin centerContent {
+  margin: 0 auto;
+}
+
+@mixin absolutePositioningCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin widthHeight($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+}
+
+@mixin gridLayout($row, $col, $row-gap, $col-gap) {
+  display: grid;
+  grid-template-rows: $row;
+  grid-template-columns: $col;
+  row-gap: $row-gap;
+  column-gap: $col-gap;
+}
+
+@mixin zoomEffectAnimation {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: $box-shadow-hover;
+}
+
+@mixin formInputStyle {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  color: $color-primary-dark-1;
+  font-size: 1.4rem;
+  border-radius: 0;
+  letter-spacing: 1px;
+  border-radius: 0;
+  border: 1px solid $color-primary;
+  background-color: $color-white;
+}
+
+@mixin formInputFocus {
+  outline: 1px solid $color-primary-dark;
+  background-color: $color-primary-extra-light-3;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

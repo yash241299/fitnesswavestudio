@@ -1,0 +1,10 @@
+@import "./../../Styles/variables";
+.about {
+  position: inherit;
+  margin-top: -10rem;
+  width: 100%;
+  height: 50vh;
+  z-index: -4;
+
+  background-color: $color-primary;
+}

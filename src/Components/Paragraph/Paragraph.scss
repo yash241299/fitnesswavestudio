@@ -1,0 +1,17 @@
+@import "./../../Styles/variables";
+
+.paragraph {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: 300;
+  padding: 1rem 0;
+  color: $color-primary-extra-dark;
+
+  @media only screen and(max-width: 62.5em) {
+    font-size: 1.5rem;
+  }
+
+  @media only screen and(max-width: 26em) {
+    font-size: 1.4rem;
+  }
+}

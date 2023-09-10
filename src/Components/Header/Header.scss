@@ -1,0 +1,91 @@
+@import "./../../Styles/variables";
+@import "./../../Styles/mixins";
+
+.header {
+  background-color: rgba($color-white, 0.7);
+  border-bottom: 1px solid $color-grey-light-2;
+  padding: 2.6rem 0;
+}
+
+.navbar-items {
+  @include flexLayout();
+  flex-wrap: wrap;
+}
+
+.main-nav {
+  @include centerContent;
+  &-list {
+    list-style: none;
+    @include flexLayout(center, center, row, 5rem);
+
+    @media only screen and(max-width: 62.5em) {
+      gap: 4rem;
+    }
+
+    @media only screen and(max-width: 50em) {
+      gap: 2rem;
+    }
+    @media only screen and(max-width: 26em) {
+      gap: 1.5rem;
+    }
+  }
+  &-link {
+    transition: all 0.2s;
+    &:link,
+    &:visited {
+      @include generalTextFormatting(500);
+      color: $color-grey;
+
+      @media only screen and(max-width: 54em) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary-dark;
+    }
+  }
+  @media only screen and(max-width: 43em) {
+    order: 2;
+  }
+}
+
+.dropdown {
+  position: relative;
+  &:hover &-card,
+  &:active &-card {
+    display: block;
+  }
+
+  &-card {
+    display: none;
+    width: max-content;
+    position: absolute;
+    margin-top: 0rem;
+    background-color: $color-white;
+    z-index: 15;
+    box-shadow: $box-shadow;
+    padding: 2rem 3rem;
+  }
+
+  &-menu {
+    &-item {
+      list-style: none;
+      @include flexLayout(start, start, column, 2rem);
+    }
+
+    &-link {
+      &:link,
+      &:visited {
+        @include generalTextFormatting(500, 1.2rem);
+        color: $color-grey;
+      }
+
+      &:hover,
+      &:active {
+        color: $color-primary;
+      }
+    }
+  }
+}

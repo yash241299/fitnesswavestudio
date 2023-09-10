@@ -1,0 +1,9 @@
+@import "./../../../Styles/mixins";
+@import "./../../../Styles/variables";
+.form-group__text-area {
+  @include formInputStyle;
+  resize: none;
+  &:focus {
+    @include formInputFocus;
+  }
+}

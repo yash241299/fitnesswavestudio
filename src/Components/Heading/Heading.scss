@@ -1,0 +1,4 @@
+@import "./../../Styles/mixins";
+.heading {
+  @include flexLayout(flex-start, center, column, 0);
+}

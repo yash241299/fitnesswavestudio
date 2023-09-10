@@ -1,0 +1,58 @@
+@import "./../../Styles/mixins";
+@import "./../../Styles/variables";
+
+.hero {
+  @include gridLayout(auto, repeat(2, 1fr), inherit, 2rem);
+  &-text-box {
+    @include flexLayout(center, flex-start, column, 0);
+    &__buttons {
+      @include flexLayout(center, center, row, 7rem);
+      margin-top: 4rem;
+
+      @media only screen and(max-width: 43em) {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &-img-box {
+    text-align: center;
+    align-self: center;
+    position: relative;
+    padding: 3rem;
+
+    &::after {
+      content: "";
+      display: block;
+      background-color: $color-primary-light;
+      @include absolutePositioningCenter;
+      @include widthHeight(95%, 95%);
+      border-radius: 50%;
+      z-index: -1;
+    }
+    &::before {
+      content: "";
+      display: block;
+      background-color: $color-primary-extra-light-2;
+      @include absolutePositioningCenter;
+      @include widthHeight();
+      border-radius: 50%;
+      z-index: -2;
+    }
+  }
+
+  &-img {
+    @include widthHeight();
+    border-radius: 50%;
+    margin-bottom: -0.5rem;
+  }
+
+  @media only screen and (max-width: 50em) {
+    margin: 2rem 0;
+  }
+
+  @media only screen and(max-width: 43em) {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}

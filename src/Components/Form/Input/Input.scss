@@ -1,0 +1,8 @@
+@import "./../../../Styles/mixins";
+@import "./../../../Styles/variables";
+.form-group__input {
+  @include formInputStyle;
+  &:focus {
+    @include formInputFocus;
+  }
+}

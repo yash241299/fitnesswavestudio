@@ -1,0 +1,29 @@
+@import "./../../../Styles/variables";
+@import "./../../../Styles/mixins";
+
+.card-item {
+  @include flexLayout(center, center, column, 2rem);
+  padding: 2rem 0;
+  &__img {
+    width: 70%;
+    border-radius: 50%;
+  }
+
+  &__trainer-type {
+    font-size: 1.2rem;
+  }
+
+  &__social-links {
+    list-style: none;
+    @include flexLayout(center, center, row, 2rem);
+
+    &__icon {
+      font-size: 2.4rem;
+      transition: all 0.2s;
+      &:hover {
+        cursor: pointer;
+        color: $color-primary-dark;
+      }
+    }
+  }
+}
